@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {StyleSheet} from 'react-native'
 
 export const useAnimatedScale = (scGap, delay) => {
     const [scale, setScale] = useState(0)
@@ -23,3 +24,6 @@ export const useAnimatedScale = (scGap, delay) => {
     }
 }
 
+export const useStyle = (scale) => {
+    const width = 
+}
