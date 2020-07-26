@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {StyleSheet} from 'react-native'
-import {divideScale, sinify} from './utils'
+import {divideScale, sinify} from './util'
 
 export const useAnimatedScale = (scGap, delay) => {
     const [scale, setScale] = useState(0)
@@ -12,7 +12,7 @@ export const useAnimatedScale = (scGap, delay) => {
                 setAnimated(true)
                 let currScale = scale 
                 const interval = setInterval(() => {
-                    currScale += scGap * dir 
+                    currScale += scGap 
                     setScale(currScale)
                     if (currScale > 1) {
                         setScale(0)
@@ -31,13 +31,12 @@ export const useStyle = (scale) => {
     const sf2 = divideScale(sf, 1, 2)
     const width = 30
     const height = 30
-    const position = 'absolute'
     const top = 300 * (1 - sf2)
     const left = 300 * sf1
-    const background = '#4CAF50'
+    const backgroundColor = 'rgba(61, 90, 254,1.0)'
     return {
         getStyle() {
-            return StyleSheet.create({position, left, top, width, height, background})
+            return StyleSheet.create({block : {left, top, width, height, backgroundColor}})
         }
     }
 }
